@@ -1,0 +1,30 @@
+#metrics { list-style-type: none; margin: 0; padding: 0; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+  #metrics li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; line-height: 1.2em; border-top:1px dotted grey;}
+
+  .ui-state-highlight { height: 2em;background-color: #EEE; margin:0; padding: 0;}
+
+select {width:auto;}
+
+.filter {margin:5px auto 5px 30px;}
+
+.table-header {margin-top:-20px;}
+
+button#save, button#choose-sheet {margin-left:20px;}
+
+.list-select {
+ 	border:1px dashed #acacae;
+ }
+
+ #save-buttons button{float:right;}
+
+.ui-autocomplete {max-height: 150px; overflow-y: auto; overflow-x: hidden;}
+
+.custom-combobox {position: relative; display: inline-block;}
+ 	.custom-combobox-toggle {position: absolute; top: 0; bottom: 0; margin-left: -1px; padding: 0;}
+ 	.custom-combobox-input {margin: 0; padding: 0.3em;}
+
+.dimension {border: 1px solid #738d68; background-color: #dae2cb; color: #738d68;}
+	.dimension:hover {background-color: #9bb47a; color: #fff;}
+
+ .metric {border: 1px solid #2f67b4; background-color: #c5dcfe; color: #2f67b4;}
+ 	.metric:hover {background-color: #6faefd; color: #fff;}

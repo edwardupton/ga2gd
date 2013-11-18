@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo GA feed setup</title>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+	<!--<link href="libraries/bootstrap.css" rel="stylesheet">-->
+	<link href="static/styles.css" rel="stylesheet">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="libraries/handlebars-v1.1.2.js"></script>
+	<script type="text/javascript" src="static/scripts.js"></script>
+
+</head>
+<body>
+<div class="container">
+<div class="alert alert-danger" style="display:none;">
+	<p></p>
+</div>
+<div class="alert alert-warning alert-dismissable" style="display:none;">
+  <strong>Warning!</strong> Your free trial period will end in 5 days.  Please start a subscription to continue fetching metrics.
+  <button type="button" class="btn btn-warning">Subscribe</button>
+</div>
+<div>
+	<h4>1. Choose a Google Doc sheet as the export destination</h4>
+	<button class="btn btn-primary" id="choose-sheet">Choose...</button>
+</div>
+<div>
+	<h4>2. Add metrics to the sheet</h4>
+</div>
+
+<div class="row table-header">
+	<div class="col-md-1 col-md-offset-10">
+		<h5 class="text-center">Last data sent</h5>
+	</div>
+	<div class="col-md-1">
+		<h5 class="text-center">From last 7 days</h5>
+	</div>
+</div>
+
+<ul id="metrics">
+	<li class="row ui-state-default">
+	<div class="row">
+		<div class="col-md-10">
+		<div>
+			<span>For each period</span>
+			<select>
+				<option>Sum</option>
+				<option>Average</option>
+				<option>Count</option>
+			</select>
+			<input type="text" class="input-large list-select" id="metric-list" placeholder="Autocomplete list of metrics from GA...">
+		</div>
+		<div class="filter">
+			<select id="filter-not">
+				<option value="false">Only include</option>
+				<option value="true">Don't include</option>
+			</select>
+			<input type="text" class="input-large list-select" id="dimension-filter" placeholder="Autocomplete list of dimensions from GA...">
+			<select id="filter-logic">
+				<option>Exactly matching</option>
+				<option>Containing</option>
+				<option>Starting with</option>
+				<option>Matching regex</option>
+			</select>
+			<input type="text" class="input-xlarge addName" id="dimension-value" placeholder="">
+		</div>
+		<span class="filter"><a href="#" id="add-filter">+ Add a filter</a></span>
+		</div>
+		<div class="col-md-1"><p class="text-center small">Yesterday</p></div>
+		<div class="col-md-1"><p class="text-center small">20</p></div>
+	</div>
+	</li>
+	<li class="row ui-state-default">
+	<div class="row">
+		<div class="col-md-10">
+		<div>
+			<span>For each period</span>
+			<select>
+				<option>Sum</option>
+				<option>Average</option>
+				<option>Count</option>
+			</select>
+			<input type="text" class="input-large list-select" id="metric-list" placeholder="Autocomplete list of metrics from GA...">
+		</div>
+		<span class="filter"><a href="#" id="add-filter">+ Add a filter</a></span>
+		</div>
+		<div class="col-md-1"><p class="text-center small">Yesterday</p></div>
+		<div class="col-md-1"><p class="text-center small">20</p></div>
+	</div>
+	</li>
+	<li class="row ui-state-default">
+		<span>I'm draggable</span>	
+	</li>
+	<li class="row ui-state-disabled">
+	<div class="row">
+		<div class="col-md-12">
+			<a href="#">+ Add another metric</a>
+		</div>
+	</div>
+	</li>
+</ul>
+<div class="row" id="save-buttons">
+	<button class="btn btn-primary" id="save">Save Metrics</button>
+	<button class="btn" id="save">Undo Changes</button>
+</div>
+
+</div>
+</body>
+
+<script id="select-box" type="text/x-handlebars-template">
+	<select>
+	{{#list values}}
+	<option value="{{id}}">{{uiName}}</option>
+	{{/list}}
+	</select>
+</script>
+
+</html>
